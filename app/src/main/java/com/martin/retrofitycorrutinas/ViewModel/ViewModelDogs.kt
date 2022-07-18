@@ -9,10 +9,10 @@ import retrofit2.Response
 
 class ViewModelDogs : ViewModel() {
 
-    val dogResponse = MutableLiveData<Response<DogsResponse>>()
+    val dogResponse = MutableLiveData<Response<DogsResponse>?>()
 
     suspend fun dogImages(query:String){
-        val response:Response<DogsResponse> = Dogs().getDogsbyRace(query)
+        val response:Response<DogsResponse>? = Dogs().getDogsbyRace(query)
 
         dogResponse.postValue(response)
     }

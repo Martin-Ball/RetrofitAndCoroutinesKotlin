@@ -35,11 +35,11 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {  //On
 
             CoroutineScope(Dispatchers.IO).launch {
                 //lo que se ejecute en esta seccion sera procesado en otro hilo
-                val puppies = it.body()    //el signo de pregunta verifica si es null
+                val puppies = it?.body()    //el signo de pregunta verifica si es null
 
                 runOnUiThread {
                     //lo que se ejecute aqui sera ejecutado en el hilo principal
-                    if (it.isSuccessful) {
+                    if (it?.isSuccessful == true) {
                         //mostrar recyclerView
                         val images = puppies?.images
                             ?: emptyList() //el simbolo ?: verifica si es nulo o no, en caso de que lo sea devuelve emptyList

@@ -6,7 +6,7 @@ import retrofit2.Response
 
 class Dogs {
 
-    public suspend fun getDogsbyRace(query:String): Response<DogsResponse> {
+    public suspend fun getDogsbyRace(query:String): Response<DogsResponse>? {
         return NetworkConnections().getRetrofit(query)
     }
 }
