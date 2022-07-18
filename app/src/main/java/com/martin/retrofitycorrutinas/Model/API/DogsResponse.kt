@@ -1,4 +1,4 @@
-package com.martin.retrofitycorrutinas.Model
+package com.martin.retrofitycorrutinas.Model.API
 
 import com.google.gson.annotations.SerializedName
 
@@ -7,3 +7,5 @@ data class DogsResponse (
     @SerializedName("message") var images:List<String>) {           //SerializedName se usa para cambiarle el nombre a las variables, llegan desde el API
                                                                     //con el nombre message pero el serializedName deja usar el nombre que quiera
 }
+
+data class Race(val race:String)

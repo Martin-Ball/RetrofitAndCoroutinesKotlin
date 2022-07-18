@@ -8,7 +8,6 @@ import androidx.activity.viewModels
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.martin.retrofitycorrutinas.DogAdapter
 import com.martin.retrofitycorrutinas.ViewModel.ViewModelDogs
 import com.martin.retrofitycorrutinas.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope

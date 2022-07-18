@@ -1,9 +1,9 @@
-package com.martin.retrofitycorrutinas
+package com.martin.retrofitycorrutinas.View
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.martin.retrofitycorrutinas.View.DogViewHolder
+import com.martin.retrofitycorrutinas.R
 
 class DogAdapter(val images:List<String>):RecyclerView.Adapter<DogViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DogViewHolder {
