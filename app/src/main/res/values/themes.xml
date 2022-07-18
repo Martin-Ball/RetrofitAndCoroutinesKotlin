@@ -13,4 +13,12 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="CustomChip" parent="Widget.MaterialComponents.Chip.Entry">
+        <item name="chipStrokeColor">@color/purple_700</item>
+        <item name="android:textColor">@color/purple_700</item>
+        <item name="android:textSize">20sp</item>
+        <item name="chipStrokeColor">@color/purple_700</item>
+        <item name="chipStrokeWidth">2dp</item>
+    </style>
 </resources>

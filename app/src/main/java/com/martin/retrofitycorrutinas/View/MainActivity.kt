@@ -8,6 +8,8 @@ import androidx.activity.viewModels
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.chip.Chip
+import com.martin.retrofitycorrutinas.R
 import com.martin.retrofitycorrutinas.ViewModel.ViewModelDogs
 import com.martin.retrofitycorrutinas.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
@@ -22,6 +24,7 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {  //On
     private val viewModelDogs:ViewModelDogs by viewModels()
 
     private val dogImages = mutableListOf<String>()     //cada vez que cambie la raza van a cambiarse todos los valores de la lista, por eso mutable
+    private var raceSelected:String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +49,7 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {  //On
                         dogImages.clear()
                         dogImages.addAll(images)
                         adapter.notifyDataSetChanged()
+                        addChip(raceSelected)
                     } else {
                         showError()
                     }
@@ -65,6 +69,14 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {  //On
     //creacion de la corrutina, toda la consulta se debe ejecutar en otro hilo que no sea el principal
     private suspend fun searchByName(query:String) {
         viewModelDogs.dogImages(query)
+        raceSelected = query
+    }
+
+    private fun addChip(query:String){
+        val chip = Chip(this)
+        chip.text = query
+        chip.isCloseIconVisible = true
+        binding.chipGroup.addView(chip)
     }
 
     private fun hideKeyboard() {

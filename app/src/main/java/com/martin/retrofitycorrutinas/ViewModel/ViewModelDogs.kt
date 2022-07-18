@@ -13,7 +13,6 @@ class ViewModelDogs : ViewModel() {
 
     suspend fun dogImages(query:String){
         val response:Response<DogsResponse>? = Dogs().getDogsbyRace(query)
-
         dogResponse.postValue(response)
     }
 }
