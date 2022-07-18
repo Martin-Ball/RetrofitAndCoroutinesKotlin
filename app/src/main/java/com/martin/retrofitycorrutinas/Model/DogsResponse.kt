@@ -1,4 +1,4 @@
-package com.martin.retrofitycorrutinas
+package com.martin.retrofitycorrutinas.Model
 
 import com.google.gson.annotations.SerializedName
 

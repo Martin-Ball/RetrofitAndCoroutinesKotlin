@@ -1,4 +1,4 @@
-package com.martin.retrofitycorrutinas
+package com.martin.retrofitycorrutinas.View
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
